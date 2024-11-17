@@ -12,4 +12,6 @@ export const appConfig: ApplicationConfig = {
   ]
 };
 
-export const baseUrl: string = 'https://localhost:7205/api/'
+// export const baseUrl: string = 'https://localhost:7205/api/'
+export const baseUrl: string = 'https://localhost/api/'
+
