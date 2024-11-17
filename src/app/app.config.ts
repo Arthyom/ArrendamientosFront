@@ -13,5 +13,6 @@ export const appConfig: ApplicationConfig = {
 };
 
 // export const baseUrl: string = 'https://localhost:7205/api/'
-export const baseUrl: string = 'https://localhost/api/'
+export const baseUrl: string = 'http://www.arrendamiento.front.alfredowflsyopollo.us/api/'
+
 
