@@ -12,7 +12,7 @@ export const appConfig: ApplicationConfig = {
   ]
 };
 
- export const baseUrl: string = 'http://localhost:5000/api/'
+ export const baseUrl: string = 'http://alfredowflsyopollo.us:5000/api/'
 // export const baseUrl: string = 'http://www.arrendamiento.front.alfredowflsyopollo.us/api/'
 
 
