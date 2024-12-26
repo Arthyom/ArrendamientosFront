@@ -6,7 +6,7 @@ export interface IResourceBaseService<T>{
 
     create(toCreateITem: T): Promise<T | undefined>;
 
-    edit(id: number): Promise<T | undefined>;
+    edit(id: number, toCreateITem: T): Promise<T | undefined>;
 
     index(): Observable<[T]>;
 

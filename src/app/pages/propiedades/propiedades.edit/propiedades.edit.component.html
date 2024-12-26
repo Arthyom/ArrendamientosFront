@@ -1,0 +1,80 @@
+<h1>Editar propiedad</h1>
+
+
+<h1>propiedad id {{propiedadId}}</h1>
+
+
+
+
+    <form *ngIf="currentProperty" [formGroup]="fgPropiedad">
+        
+        <div class="form-group">
+            <label for="">Alias</label>
+            <input formControlName="alias" type="text"  class="form-control" placeholder="" aria-describedby="helpId">
+            <small id="helpId" class="text-muted">Help text</small>
+        </div>
+
+        <div class="form-group">
+            <label for="">Nombre</label>
+            <input formControlName="nombre" type="text"  class="form-control" placeholder="" aria-describedby="helpId">
+            <small id="helpId" class="text-muted">Help text</small>
+        </div>
+
+        <div class="form-group">
+          <label for="">Precio</label>
+          <input type="number" formControlName="precio"  class="form-control" placeholder="" aria-describedby="helpId">
+          <small id="helpId" class="text-muted">Help text</small>
+        </div>
+
+        <div class="form-group">
+            <label for="">Tipo Propiedad</label>
+            <input type="text"  formControlName="typeProperty" class="form-control" placeholder="" aria-describedby="helpId">
+            <small id="helpId" class="text-muted">Help text</small>
+        </div>
+
+        
+        <div class="form-group">
+            <label for="">Direccion</label>
+            <input type="text" formControlName="direccion" class="form-control" placeholder="" aria-describedby="helpId">
+            <small id="helpId" class="text-muted">Help text</small>
+        </div>
+
+        <div class="form-group">
+            <label for="">Municipio</label>
+            <input type="text" formControlName="municipio" class="form-control" placeholder="" aria-describedby="helpId">
+            <small id="helpId" class="text-muted">Help text</small>
+        </div>
+
+        <div class="form-group">
+            <label for="">Colonia</label>
+            <input type="text" formControlName="colonia" class="form-control" placeholder="" aria-describedby="helpId">
+            <small id="helpId" class="text-muted">Help text</small>
+        </div>
+
+        <div class="form-group">
+            <label for="">Libre</label>
+            <input type="text" formControlName="libre"  class="form-control" placeholder="" aria-describedby="helpId">
+            <small id="helpId" class="text-muted">Help text</small>
+        </div>
+
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" formControlName="libre" >
+            Libre
+          </label>
+        </div>
+    </form>
+
+
+    <pre>
+        {{currentProperty| json}}
+    </pre>
+    
+
+
+<div class="row">
+    <button type="button" class="btn btn-primary btn-lg btn-block col-md-1-6" (click)="edit(propiedadId)"> Guardar</button>
+    <button type="button" class="btn btn-danger  btn-lg btn-block col-md-1-6"> Cancelar</button>
+
+   
+</div>

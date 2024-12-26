@@ -23,4 +23,14 @@ export class PropiedadesComponent extends BaseComponent<Propiedad> {
     this.propiedades = this.index();
   }
 
+  public  async borrar(id:number|undefined){
+    const ok = await this.rs.delete(id as number);
+
+    if(ok){
+      alert('ok')
+    }
+    else{
+      alert('error');
+    }
+  }
 }

@@ -20,8 +20,8 @@ export class BaseComponent<T extends BaseEntity> implements IBaseComponent<T> {
 
     }
 
-    edit(id: number): Promise< T | undefined >{
-        return this.resourceBase.edit(id);
+    edit(id: number, toEdit: T): Promise< T | undefined >{
+        return this.resourceBase.edit(id, toEdit);
     }
 
     index(): Observable< [T] > {

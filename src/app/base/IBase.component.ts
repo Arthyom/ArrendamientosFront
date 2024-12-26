@@ -5,7 +5,7 @@ export interface IBaseComponent<T>{
 
     create(toCreateITem: T): Promise< T | undefined >;
 
-    edit(id: number): Promise< T | undefined >;
+    edit(id: number, toEdit: T): Promise< T | undefined >;
 
     index():Observable< [T] >;
 

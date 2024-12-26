@@ -1,9 +1,10 @@
+import { AnySchemaObject } from './../../../node_modules/schema-utils/declarations/keywords/absolutePath.d';
 import { Inject, Injectable } from '@angular/core';
 import { IResourceBaseService } from './IResourceBase.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { baseUrl } from '../app.config';
 import { BaseEntity } from '../common/models/baseEntity/BaseEntity';
-import { map, Observable } from 'rxjs';
+import { firstValueFrom, map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -33,20 +34,19 @@ export class ResourceBaseService<T extends BaseEntity> implements IResourceBaseS
                
   }
 
-  edit(id: number): Promise<T> {
-     this.httpCliente.get<T>(`this.fullUrl/${id}`)
-     throw new Error('Method not implemented.');
-
+  async edit(id: number, toEdit: T): Promise<T> {
+    return await firstValueFrom( this.httpCliente.put<T>(`${baseUrl}${this.resourceName}/${id}`, toEdit))
   }
 
   index(): Observable<[T]> {
    return this.httpCliente.get<[T]>( `${baseUrl}${this.resourceName}`)
   }
 
-  delete(id: number): Promise<boolean> {
-    throw new Error('Method not implemented.');
+  async delete(id: number): Promise<boolean> {
+    return await firstValueFrom( this.httpCliente.delete<boolean>(`${baseUrl}${this.resourceName}/${id}`))
   }
-  details(id: number): Promise<T> {
-    throw new Error('Method not implemented.');
+  
+  async details(id: number): Promise<T> {
+    return await firstValueFrom( this.httpCliente.get<T>(`${baseUrl}${this.resourceName}/${id}`) )
   }
 }

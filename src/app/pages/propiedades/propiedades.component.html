@@ -24,13 +24,13 @@
                 <td>
                     <div class="row">
                         <div class="col-4">
-                            <button type="button" name="" id="" class="btn btn-primary btn-lg btn-block"></button>
+                            <a type="button" [href]="'propiedades/edit/'+propiedad.id" class="btn btn-primary btn-lg btn-block">Editar</a>
                         </div>
                         <div class="col-4">
                             <button type="button" name="" id="" class="btn btn-secondary btn-lg btn-block"></button>
                         </div>
                         <div class="col-4">
-                            <button type="button" name="" id="" class="btn btn-danger btn-lg btn-block"></button>
+                            <button (click)="borrar(propiedad.id)" type="button" name="" id="" class="btn btn-danger btn-lg btn-block">Borrar</button>
                         </div>
                     </div>
                 </td>
